@@ -14,7 +14,7 @@ var config = {
   //////////////Homepage Hide//////////////////////
  var wurl= window.location.href;
 
- if(wurl== "https://wesuzz.blogspot.com" || wurl== "https://wesuzz.blogspot.com?m=1"){
+ if(wurl== "https://wesuzz.blogspot.com/" || wurl== "https://wesuzz.blogspot.com?m=1"){
 document.getElementById("FullBody").style.display ="none";
 
  }
