@@ -127,17 +127,27 @@ var RED = firebase.database().ref(TagFolder).child('price');
       }
 
       else{
-        var cartcheckrsd = +cartcheckr;
-        var cartcheckadd = +cartcheckrsd+1;
-        localStorage.setItem("cartcheckr", cartcheckadd);
-        document.getElementById("cardbandge").style.display = "block";
-        document.getElementById("cardbandge").innerHTML = cartcheckadd;
+        doCartitem();
       }
 
     docartadd();
     
    }
 
+ ///////////////////////////////Card Storage iten under iten////////////////  
+function doCartitem(){
+  var cartcheckr = localStorage.getItem("cartcheckr");
+
+  if(cartcheckr < 4){
+
+    var cartcheckrsd = +cartcheckr;
+    var cartcheckadd = +cartcheckrsd+1;
+    localStorage.setItem("cartcheckr", cartcheckadd);
+    document.getElementById("cardbandge").style.display = "block";
+    document.getElementById("cardbandge").innerHTML = cartcheckadd;
+  }
+
+}
 /////////////////////Cart Add Compliting Storage by Storage//////////////////
    function docartadd(){
     var ProductID2 = document.getElementById("ProductID").innerHTML;
