@@ -126,7 +126,7 @@ else{
 //////////////////////////////Product Update to FirebaseDatabase  Cart//////////////////////
 var CartFolderId  = "BE-commerce/Purchase/"+carttoken+"/"+ProductID;
 
-var img = document.getElementById("img1").src;
+var img = document.getElementById("productImg").src;
 var title = document.getElementById("titles").innerHTML;
 var price = document.getElementById("productPrice").innerHTML;
 var quantity = document.getElementById("quantity").value;
