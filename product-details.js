@@ -142,6 +142,7 @@ firebase.database().ref(CartFolderId).update({
     size : size,
     quantity : quantity,
     subtotal : subtotals,
+    CID : ProductID,
       });
  
       document.getElementById("checkouts").style.display = "block";
