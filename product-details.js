@@ -72,7 +72,7 @@ var RED = firebase.database().ref(TagFolder).child('price');
 
   var cartcheckr = localStorage.getItem("cartcheckr");
 
-    if(cartcheckr==null){
+    if(cartcheckr==null || cartcheckr==0){
     
       }
 
