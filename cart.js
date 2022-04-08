@@ -10,7 +10,27 @@ var config = {
   measurementId: "G-GLD9CY5VPF"};
 firebase.initializeApp(config);
 
-////////Profit////Arry////
+////////trgull menu////Arry////
+
+
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+
+if(MenuItems.style.maxHeight == "0px"){
+    MenuItems.style.maxHeight = "200px";
+
+}
+
+else{
+
+
+    MenuItems.style.maxHeight = "0px";
+}
+
+    }
 //////////////////////////
 
 (function() {
