@@ -16,9 +16,9 @@ firebase.initializeApp(config);
 
 (function() {
   
-  var Future = angular.module('Future', [ "firebase"]);
+  var Future2 = angular.module('Future2', [ "firebase"]);
 
-Future.controller('Maincontollers', ["$scope", "$firebaseArray", "$interval", function ($scope, $firebaseArray, $interval) {
+Future.controller('Maincontollers2', ["$scope", "$firebaseArray", "$interval", function ($scope, $firebaseArray, $interval) {
 
   $scope.sortType     = 'date'; // set the default sort type
 $scope.sortReverse  = false;  // set the default sort order
@@ -82,7 +82,7 @@ var ref = firebase.database().ref().child(live);
 
 }]);
 
-angular.module('Future').filter('pagination', function(){
+angular.module('Future2').filter('pagination', function(){
   return function(input, begin) {
     begin = parseInt(begin, 10);
     return input.slice(begin);
@@ -176,13 +176,13 @@ angular.module('Letest').filter('pagination', function(){
 
 
 
- var firstDiv = document.getElementById('Future');
+ var firstDiv = document.getElementById('Future2');
  var SecondDiv = document.getElementById('Letest');
 
     
        // manually boostrapping the second app
        angular.element(document).ready(function() {
-              angular.bootstrap(firstDiv, [ 'Future' ]);
+              angular.bootstrap(firstDiv, [ 'Future2' ]);
               angular.bootstrap(SecondDiv, [ 'Letest' ]);
 			  });
 	   
