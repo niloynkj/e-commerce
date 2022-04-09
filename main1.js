@@ -10,7 +10,7 @@ var config = {
   measurementId: "G-GLD9CY5VPF"};
 firebase.initializeApp(config);
 
-
+alert(000);
 ////////Profit////Arry////
 //////////////////////////
 
