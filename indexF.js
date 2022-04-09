@@ -182,7 +182,7 @@ angular.module('Letest').filter('pagination', function(){
     
        // manually boostrapping the second app
        angular.element(document).ready(function() {
-              angular.bootstrap(firstDiv, [ 'FProduct' ]);
               angular.bootstrap(SecondDiv, [ 'Letest' ]);
+	       angular.bootstrap(firstDiv, [ 'FProduct' ]);
 			  });
 	   
