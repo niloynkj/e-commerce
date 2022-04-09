@@ -22,7 +22,7 @@ myprofit.controller('Maincontollers', ["$scope", "$firebaseArray", "$interval", 
 
 $scope.sortType     = 'date'; // set the default sort type
 $scope.sortReverse  = false;  
-$scope.searchFish   = 'Live';
+$scope.searchFish   = 'Future';
 $scope.searchProfit   = 'Future'; // Extra Search path
  $scope.showData = function( ){
 
