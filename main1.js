@@ -1,4 +1,3 @@
-//////////////////////////////Releted/Product////////////
 var config = {
     apiKey: "AIzaSyCWGbJi9qeD7h6BPhAKBoWupHv21Tge3ck",
   authDomain: "effort-5efac.firebaseapp.com",
@@ -10,20 +9,20 @@ var config = {
   measurementId: "G-GLD9CY5VPF"};
 firebase.initializeApp(config);
 
-alert(000);
+
 ////////Profit////Arry////
 //////////////////////////
 
 (function() {
   
-  var myprofit = angular.module('myprofit', [ "firebase"]);
+  var Future = angular.module('Future', [ "firebase"]);
 
-myprofit.controller('Maincontollers', ["$scope", "$firebaseArray", "$interval", function ($scope, $firebaseArray, $interval) {
+Future.controller('Maincontollers', ["$scope", "$firebaseArray", "$interval", function ($scope, $firebaseArray, $interval) {
 
-$scope.sortType     = 'date'; // set the default sort type
-$scope.sortReverse  = false;  
+  $scope.sortType     = 'date'; // set the default sort type
+$scope.sortReverse  = false;  // set the default sort order
 $scope.searchFish   = 'Future';
-$scope.searchProfit   = ''; // Extra Search path
+$scope.searchProfit   = '';
  $scope.showData = function( ){
 
  $scope.itemsPerPage = 4;
@@ -32,7 +31,7 @@ $scope.searchProfit   = ''; // Extra Search path
  var live = "BE-commerce/Post";
 var ref = firebase.database().ref().child(live);
 
-  $scope.pages = $firebaseArray(ref);
+	$scope.pages = $firebaseArray(ref);
      $scope.range = function() {
     var rangeSize = 4;
     var ps = [];
@@ -82,7 +81,7 @@ var ref = firebase.database().ref().child(live);
 
 }]);
 
-angular.module('myprofit').filter('pagination', function(){
+angular.module('Future').filter('pagination', function(){
   return function(input, begin) {
     begin = parseInt(begin, 10);
     return input.slice(begin);
@@ -93,18 +92,99 @@ angular.module('myprofit').filter('pagination', function(){
 })();
 
 
-////////////Add Another ///
+////////////Cost/////////Arry///
 ////////////////////////////////
 
 
+(function() {
+  
+  var Letest = angular.module('Letest', [ "firebase"]);
+
+Letest.controller('Maincontoller', ["$scope", "$firebaseArray", "$interval", function ($scope, $firebaseArray, $interval) {
+
+  $scope.sortType     = 'date'; // set the default sort type
+$scope.sortReverse  = false;  // set the default sort order
+$scope.searchFish   = 'Live';
+$scope.searchCost   = '';
+ $scope.showData = function( ){
+
+ $scope.itemsPerPage = 10;
+ $scope.currentPage = 0;
+ 
+ var live = "BE-commerce/Post";
+var ref = firebase.database().ref().child(live);
+
+	$scope.pages = $firebaseArray(ref);
+     $scope.range = function() {
+    var rangeSize = 4;
+    var ps = [];
+    var begin;
+
+    begin = $scope.currentPage;
+    if ( begin > $scope.pageCount()-rangeSize ) {
+      begin = $scope.pageCount()-rangeSize+1;
+    }
+
+    for (var i=begin; i<begin+rangeSize; i++) {
+      ps.push(i);
+    }
+    return ps;
+  };
+
+  $scope.prevPage = function() {
+    if ($scope.currentPage > 0) {
+      $scope.currentPage--;
+    }
+  };
+
+  $scope.DisablePrevPage = function() {
+    return $scope.currentPage === 0 ? "disabled" : "";
+  };
+
+  $scope.pageCount = function() {
+    return Math.ceil($scope.pages.length/$scope.itemsPerPage)-1;
+  };
+
+  $scope.nextPage = function() {
+    if ($scope.currentPage < $scope.pageCount()) {
+      $scope.currentPage++;
+    }
+  };
+
+  $scope.DisableNextPage = function() {
+    return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
+  };
+
+  $scope.setPage = function(n) {
+    $scope.currentPage = n;
+  };
+};
 
 
- var firstDiv = document.getElementById('myprofit');
+}]);
+
+angular.module('Letest').filter('pagination', function(){
+  return function(input, begin) {
+    begin = parseInt(begin, 10);
+    return input.slice(begin);
+  };
+  
+});
+})();
+
+
+
+
+ var firstDiv = document.getElementById('Future');
+ var SecondDiv = document.getElementById('Letest');
 
     
        // manually boostrapping the second app
        angular.element(document).ready(function() {
-              angular.bootstrap(firstDiv, [ 'myprofit' ]);
-        });
+              angular.bootstrap(firstDiv, [ 'Future' ]);
+              angular.bootstrap(SecondDiv, [ 'Letest' ]);
+			  });
+	   
 
-
+ 
+ 
