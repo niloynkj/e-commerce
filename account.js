@@ -40,6 +40,7 @@ var Indicatior = document.getElementById("Indicatior");
            var Fname = document.getElementById("username").value;
            var passw = document.getElementById("psw").value;
            var phoneNumber = document.getElementById("phoneNumber").value;
+           var adress = document.getElementById("adress").value;
            var Femail = user.email;
            var FB_photoUrl = user.photoURL;
            var FemailVerified = user.emailVerified;
@@ -57,6 +58,7 @@ var Indicatior = document.getElementById("Indicatior");
                      Totalpoint: 5,
                      Costpoint: 0,
                      Joindate: Y5,
+                     adress : adress,
    
                    });
     Regform.style.transform = "translateX(300px)"
