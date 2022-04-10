@@ -11,7 +11,7 @@ var config = {
   firebase.initializeApp(config);
   
   var wurl = window.location.href;
-  var ScellIDS = wurl.replace("http://localhost/blogger/checkout-details.html?=", "")
+  var ScellIDS = wurl.replace("https://wesuzz.blogspot.com/p/checkout-details.html?=", "")
   
   var TagFolder = "BE-commerce/Purchase/"+ScellIDS;
   var RED = firebase.database().ref(TagFolder).child('Date');
