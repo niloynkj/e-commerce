@@ -130,12 +130,10 @@ var table = document.getElementById("CartEstimate"), sumVal = 0;
           }
           
     var CartEstimate = sumVal;
-          console.log(sumVal);
+
  var FTotal = +CartEstimate+Reddata   
 document.getElementById("Fsubtotal").innerHTML = CartEstimate;
 document.getElementById("Ftotal").innerHTML = FTotal;
-
-finallyup(CartEstimate);
 
 }
 
@@ -161,7 +159,7 @@ subtotal : Fprice,
 });
 
 
-var REDSE2 = firebase.database().ref("Admin").child('ServiceCharge');
+var REDSE2 = firebase.database().ref(PaymentFolder).child('ServiceCharge');
         REDSE2.on('value', function(snapshot) {
         var Reddata = (snapshot.val());
         UpdateEstimate(Reddata);
@@ -191,7 +189,7 @@ localStorage.setItem("cartcheckr", cartcheckadd);
 document.getElementById("cardbandge").style.display = "block";
 document.getElementById("cardbandge").innerHTML = cartcheckadd;
 
-var REDSE3 = firebase.database().ref("Admin").child('ServiceCharge');
+var REDSE3 = firebase.database().ref(PaymentFolder).child('ServiceCharge');
 REDSE3.on('value', function(snapshot) {
 var Reddata = (snapshot.val());
 dotimers(Reddata);
